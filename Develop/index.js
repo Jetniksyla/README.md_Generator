@@ -74,13 +74,15 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, "utf8", (error) =>
-    error
-      ? console.error(error)
-      : console.log("Successfully created README.md!")
-  );
-}
+  function writeToFile(fileName, data) {
+    // Specify the output folder path
+    const outputPath = "./develop/readme.output/" + fileName;
+    fs.writeFile(outputPath, data, "utf8", (error) =>
+      error
+        ? console.error(error)
+        : console.log("Successfully created README.md in readme.output folder!")
+    );
+  }
 
 // TODO: Create a function to initialize app
 function init() {

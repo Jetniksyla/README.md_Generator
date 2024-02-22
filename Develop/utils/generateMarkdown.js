@@ -59,9 +59,6 @@ ${data.usage}
 ## Contributing
 ${data.contributing}
 
-## Screenshot of the Project
-![Screenshot](${data.screenshot})
-
 ## Questions
 For questions about the project:
 - GitHub Profile: [${data.creator}](https://github.com/${data.creator})
