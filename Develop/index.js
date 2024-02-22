@@ -74,20 +74,20 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-  function writeToFile(fileName, data) {
-    // Specify the output folder path
-    const outputPath = "./develop/readme.output/" + fileName;
-    fs.writeFile(outputPath, data, "utf8", (error) =>
-      error
-        ? console.error(error)
-        : console.log("Successfully created README.md in readme.output folder!")
-    );
-  }
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, "utf8", (error) =>
+    error
+      ? console.error(error)
+      : console.log("Successfully created README.md!")
+  );
+}
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    fs.writeFileSync("README.md", generateMarkdown({ ...answers }));
+    writeToFile("README.md", generateMarkdown({ ...answers }), () => {
+      console.log("Write operation complete.");
+    });
   });
 }
 // Function call to initialize app
